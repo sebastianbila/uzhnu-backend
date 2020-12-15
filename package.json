@@ -1,0 +1,44 @@
+{
+  "name": "uzhnu-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianbila/uzhnu-backend.git"
+  },
+  "keywords": [
+    "js",
+    "nodejs",
+    "backend",
+    "jwt",
+    "express"
+  ],
+  "author": "Sebastian Bila <sebastianbila.sw@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastianbila/uzhnu-backend/issues"
+  },
+  "homepage": "https://github.com/sebastianbila/uzhnu-backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validation": "^3.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "server-response": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

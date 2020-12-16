@@ -7,7 +7,11 @@ API_URL = https://uzhnu-backend.herokuapp.com
 
 **currentUser**: api/user/currentUser (GET). Add Header Authorization (eg. Bearer: ...token)
 
-**news** api/news/ (GET). If provided *?limit*, news will be returned in the specified amount
+**news**
+
+    1. api/news/ (GET). Pagination works on this route. Query: *limit* *page*. Returrn news and pagination object
+    2. api/news/:id (GET). Return news detail. Need to provide id
+
 
 **poll** 
 
@@ -18,5 +22,6 @@ API_URL = https://uzhnu-backend.herokuapp.com
 **apartment** api/apartment?name=*yourname* (GET). replace *yourname* with your user name
 
 **tas** api/tas?name=*yourname* (GET). replace *yourname* with your user name
+
   
   

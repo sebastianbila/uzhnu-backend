@@ -3,4 +3,5 @@ module.exports = {
   UserController: require('./userController'),
   NewsController: require('./newsController'),
   PollController: require('./pollController'),
+  ApartmentController: require('./apartmentController'),
 }

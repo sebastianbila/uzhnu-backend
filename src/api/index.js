@@ -5,7 +5,8 @@ const {
   AuthRouter,
   UserRouter,
   NewsRouter,
-  PollRouter
+  PollRouter,
+  ApartmentRoute
 } = require('./routers')
 const { errorHandlingMiddleware, authMiddleware } = require('./middlewares')
 const passportStrategy = require('../shared/passportStrategy')
@@ -19,9 +20,10 @@ function applyApi(app) {
 
   app.use('/api/auth', AuthRouter)
   app.use('/api/news', NewsRouter)
+  app.use('/api/poll', PollRouter)
   app.use(authMiddleware)
   app.use('/api/user', UserRouter)
-  app.use('/api/poll', PollRouter)
+  app.use('/api/apartment', ApartmentRoute)
 
   app.use(errorHandlingMiddleware)
 }

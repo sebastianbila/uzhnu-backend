@@ -3,4 +3,5 @@ module.exports = {
   UserRouter: require('./userRouter'),
   NewsRouter: require('./newsRouter'),
   PollRouter: require('./pollRouter'),
+  ApartmentRoute: require('./apartmentRoute'),
 }

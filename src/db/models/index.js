@@ -3,4 +3,5 @@ module.exports = {
   News: require('./news'),
   Poll: require('./poll'),
   Vote: require('./votes'),
+  Apartment: require('./apartment'),
 }

@@ -13,9 +13,7 @@ const schema = new Schema({
   birthPlace: {
     type: String
   },
-  imgPath: [
-    { type: String }
-  ],
+  imgPath: { type: String },
   phoneNumber: {
     type: String
   },

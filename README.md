@@ -11,6 +11,6 @@ API_URL = https://uzhnu-backend.herokuapp.com
 
 **poll** 
  
-          1. /api/poll (GET).
-          2. /api/poll/userVoted/:userId (GET). Pass userId to params. Returns boolean value
-          2. /api/poll/votedResult (GET). Returns object with results
+      1. /api/poll (GET).
+      2. /api/poll/userVoted/:userId (GET). Pass userId to params. Returns boolean value
+      2. /api/poll/votedResult (GET). Returns object with results

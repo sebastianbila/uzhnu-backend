@@ -36,7 +36,6 @@ async function getNewsDetail(req, res, next) {
     const newsService = new ServiceFactory().createNewsService()
     const item = await newsService.getNewsDetail(id)
 
-    console.log(item)
     ok(res, item)
   } catch (err) {
     next(err)

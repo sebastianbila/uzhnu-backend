@@ -1,7 +1,7 @@
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-const { AuthRouter, UserRouter } = require('./routers')
+const { AuthRouter, UserRouter, NewsRouter } = require('./routers')
 const { errorHandlingMiddleware, authMiddleware } = require('./middlewares')
 const passportStrategy = require('../shared/passportStrategy')
 
@@ -13,6 +13,7 @@ function applyApi(app) {
   passportStrategy(passport)
 
   app.use('/api/auth', AuthRouter)
+  app.use('/api/news', NewsRouter)
   app.use(authMiddleware)
   app.use('/api/user', UserRouter)
 

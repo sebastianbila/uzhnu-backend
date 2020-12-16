@@ -4,4 +4,5 @@ module.exports = {
   Poll: require('./poll'),
   Vote: require('./votes'),
   Apartment: require('./apartment'),
+  Tas: require('./tas'),
 }

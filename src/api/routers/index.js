@@ -4,6 +4,8 @@ module.exports = {
   NewsRouter: require('./newsRouter'),
   PollRouter: require('./pollRouter'),
   ApartmentRoute: require('./apartmentRoute'),
-  TasRouter: require('./tasRoute'),
+  TasRouter: require('./tasRouter'),
   OsbbRouter: require('./osbbRouter'),
+  DocumentRouter: require('./documentRouter'),
+  AnnouncementRouter: require('./announcementRouter'),
 }

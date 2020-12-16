@@ -1,11 +1,11 @@
 const { News } = require('../../db/models')
 
 class NewsService {
-  async getAllNews(limit) {
+  async getAllNews() {
     const news = await News.find()
 
     // Return limited news
-    if (limit) return news.slice(0, limit)
+    if (news) throw new Error('Not found')
 
     return news
   }

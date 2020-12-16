@@ -6,6 +6,9 @@ const schema = new Schema({
   },
   cost: {
     type: String
+  },
+  imgPath: {
+    type: String
   }
 })
 

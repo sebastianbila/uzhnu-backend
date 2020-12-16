@@ -6,4 +6,6 @@ module.exports = {
   Apartment: require('./apartment'),
   Tas: require('./tas'),
   Osbb: require('./osbb'),
+  Announcements: require('./announcement'),
+  Document: require('./document'),
 }

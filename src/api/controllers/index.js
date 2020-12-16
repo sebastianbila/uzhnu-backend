@@ -6,4 +6,6 @@ module.exports = {
   ApartmentController: require('./apartmentController'),
   TasController: require('./tasController'),
   OsbbController: require('./osbbController'),
+  DocumentController: require('./documentController'),
+  AnnouncementController: require('./announcementController'),
 }

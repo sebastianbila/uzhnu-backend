@@ -16,5 +16,7 @@ API_URL = https://uzhnu-backend.herokuapp.com
       2. /api/poll/votedResult (GET). Returns object with results
 
 **apartment** api/apartment?name=*yourname* (GET). replace *yourname* with your user name
+
+**tas** api/tas?name=*yourname* (GET). replace *yourname* with your user name
   
   

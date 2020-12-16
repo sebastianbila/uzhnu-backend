@@ -5,4 +5,6 @@ API_URL = https://uzhnu-backend.herokuapp.com
 ## Available routes 
 **login**: api/auth/login (POST)
 
-**currentUser**: api/user/currentUser (GET). Need to pass the JWT token to the Header Authorization (eg. Bearer: ...token)
+**currentUser**: api/user/currentUser (GET). Add Header Authorization (eg. Bearer: ...token)
+
+**news** api/news/ (GET). If provided *?limit*, news will be returned in the specified amount

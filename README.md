@@ -23,5 +23,7 @@ API_URL = https://uzhnu-backend.herokuapp.com
 
 **tas** api/tas?name=*yourname* (GET). replace *yourname* with your user name
 
+**osbb** api/osbb (GET). Get all osbb
+
   
   

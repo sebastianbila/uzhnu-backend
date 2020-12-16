@@ -3,6 +3,7 @@ const NewsService = require('./newsService')
 const PollService = require('./pollService')
 const ApartmentService = require('./apartmentService')
 const TasService = require('./tasService')
+const OsbbService = require('./osbbService')
 
 class ServiceFactory {
   createAuthService() {
@@ -23,6 +24,10 @@ class ServiceFactory {
 
   createTasService() {
     return new TasService()
+  }
+
+  createOsbbService() {
+    return new OsbbService()
   }
 }
 

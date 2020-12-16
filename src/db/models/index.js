@@ -5,4 +5,5 @@ module.exports = {
   Vote: require('./votes'),
   Apartment: require('./apartment'),
   Tas: require('./tas'),
+  Osbb: require('./osbb'),
 }

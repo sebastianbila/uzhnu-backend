@@ -5,4 +5,5 @@ module.exports = {
   PollRouter: require('./pollRouter'),
   ApartmentRoute: require('./apartmentRoute'),
   TasRouter: require('./tasRoute'),
+  OsbbRouter: require('./osbbRouter'),
 }

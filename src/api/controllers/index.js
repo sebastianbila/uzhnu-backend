@@ -5,4 +5,5 @@ module.exports = {
   PollController: require('./pollController'),
   ApartmentController: require('./apartmentController'),
   TasController: require('./tasController'),
+  OsbbController: require('./osbbController'),
 }

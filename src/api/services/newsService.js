@@ -9,6 +9,11 @@ class NewsService {
 
     return news
   }
+
+  getNewsDetail(id) {
+    return News.findOne({ _id: id })
+  }
 }
+
 
 module.exports = NewsService

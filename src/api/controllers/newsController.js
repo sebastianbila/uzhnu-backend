@@ -30,6 +30,20 @@ async function getAllNews(req, res, next) {
   }
 }
 
+async function getNewsDetail(req, res, next) {
+  try {
+    const { id } = req.params
+    const newsService = new ServiceFactory().createNewsService()
+    const item = await newsService.getNewsDetail(id)
+
+    console.log(item)
+    ok(res, item)
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
-  getAllNews
+  getAllNews,
+  getNewsDetail
 }

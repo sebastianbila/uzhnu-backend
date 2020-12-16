@@ -1,4 +1,4 @@
-const { Poll } = require('../../db/models')
+const { Poll, Vote } = require('../../db/models')
 
 class PollService {
   async getPolls() {
@@ -15,6 +15,7 @@ class PollService {
 
   async isUserVoted(userId) {
     const polls = await Poll.find()
+    const vote = await Vote.find()
 
     return polls[0].votes.some(
       (item) => item.user && item.user.toString() === userId.toString()

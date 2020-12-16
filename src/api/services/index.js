@@ -1,5 +1,6 @@
 const AuthService = require('./authService')
 const NewsService = require('./newsService')
+const PollService = require('./pollService')
 
 class ServiceFactory {
   createAuthService() {
@@ -8,6 +9,10 @@ class ServiceFactory {
 
   createNewsService() {
     return new NewsService()
+  }
+
+  createPollService() {
+    return new PollService()
   }
 }
 

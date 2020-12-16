@@ -10,20 +10,18 @@ async function getAllNews(req, res, next) {
     const result = {}
     result.news = await newsService.getAllNews()
 
-    if (limit && limit !== 0) {
-      const totalItems = result.news.length
-      const pageSize = +limit
-      const currentPage = +page
+    const totalItems = result.news.length
+    const pageSize = +limit
+    const currentPage = +page
 
-      result.pagination = {
-        totalItems,
-        totalPages: Math.ceil(totalItems / pageSize),
-        currentPage
-      }
+    result.pagination = {
+      totalItems,
+      totalPages: Math.ceil(totalItems / pageSize),
+      currentPage
+    }
 
-      if (!pageSize !== 0) {
-        result.news = result.news.slice((currentPage - 1) * pageSize).slice(0, pageSize)
-      }
+    if (limit && !pageSize !== 0) {
+      result.news = result.news.slice((currentPage - 1) * pageSize).slice(0, pageSize)
     }
 
     ok(res, result)

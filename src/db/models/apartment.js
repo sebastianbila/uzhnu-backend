@@ -5,7 +5,7 @@ const schema = new Schema({
   accountNumber: { type: String },
   area: { type: String },
   adress: { type: String },
-  benefits: [String],
+  benefits: String,
   phoneNumber: { type: String },
   services: {
     electricityCost: {
@@ -26,7 +26,6 @@ const schema = new Schema({
     waterCost: {
       type: String
     },
-    /////////////
     electricityType: {
       type: String
     },

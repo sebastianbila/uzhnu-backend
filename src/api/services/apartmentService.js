@@ -5,7 +5,7 @@ class ApartmentService {
     const apartment = await Apartment.find()
 
     let specificApartment
-    const isResident = apartment.map((apart) => {
+    apartment.map((apart) => {
       if (apart.residents.some((i) => i === name)) {
         specificApartment = apart
       }

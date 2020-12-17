@@ -4,7 +4,7 @@ class NewsService {
   async getAllNews() {
     const news = await News.find()
 
-    if (news) throw new Error('Not found')
+    if (!news) throw new Error('Not found')
     return news
   }
 

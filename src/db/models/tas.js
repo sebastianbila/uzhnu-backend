@@ -4,8 +4,11 @@ const schema = new Schema({
   name: {
     type: String
   },
-  cost: {
-    type: String
+  costFixed: {
+    type: Number
+  },
+  costDynamic: {
+    type: Number
   },
   imgPath: {
     type: String

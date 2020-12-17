@@ -36,6 +36,8 @@ API_URL = https://uzhnu-backend.herokuapp.com
       2. api/announcement/comments/:id (GET). *:id* - mean announcementId, to get all comments
       2. api/announcement/comments/:id/nested/:commentId (GET). *:id* - mean announcementId, *:commentId* - mean id of comment of announcement
 
+**get user details** /api/user/:userId (GET). Return user object
+
 
 
   

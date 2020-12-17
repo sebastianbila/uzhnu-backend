@@ -30,7 +30,6 @@ function applyApi(app) {
   app.use('/api/apartment', ApartmentRoute)
   app.use('/api/document', DocumentRouter)
   app.use('/api/announcement', AnnouncementRouter)
-  app.use(authMiddleware)
   app.use('/api/user', UserRouter)
 
   app.use(errorHandlingMiddleware)

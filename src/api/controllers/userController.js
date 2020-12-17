@@ -1,4 +1,5 @@
 const { ok } = require('server-response')
+const { User } = require('../../db/models')
 
 async function getCurrentUser(req, res, next) {
   try {
@@ -14,6 +15,20 @@ async function getCurrentUser(req, res, next) {
   }
 }
 
+async function getUserInfo(req, res, next) {
+  try {
+    const { userId } = req.params
+
+    const user = await User.findOne({_id: userId})
+    if (!user) throw new Error('User not found')
+
+    res.send(user)
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
-  getCurrentUser
+  getCurrentUser,
+  getUserInfo
 }

@@ -57,8 +57,22 @@ async function getAnnouncementNestedComments(req, res, next) {
   }
 }
 
+async function getAnnouncementDetail(req, res, next) {
+  try {
+    const { id } = req.params
+
+    const announcementService = new ServiceFactory().createAnnouncementService()
+    const nestedComments = await announcementService.getAnnouncementDetail(id)
+
+    ok(res, nestedComments)
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
   getAllAnnouncement,
   getAnnouncementComments,
-  getAnnouncementNestedComments
+  getAnnouncementNestedComments,
+  getAnnouncementDetail
 }

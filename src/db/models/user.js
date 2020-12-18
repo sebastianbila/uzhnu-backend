@@ -5,6 +5,10 @@ const schema = new Schema({
     type: String,
     require: true
   },
+  email: {
+    required: true,
+    type: String
+  },
   birthday: {
     type: Date,
     required: true

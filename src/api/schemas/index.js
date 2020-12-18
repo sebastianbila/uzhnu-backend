@@ -1,4 +1,5 @@
 module.exports = {
   authValidator: require('./auth'),
-  pollValidator: require('./poll')
+  pollValidator: require('./poll'),
+  userValidation: require('./user')
 }

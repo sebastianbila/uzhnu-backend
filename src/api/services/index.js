@@ -5,6 +5,7 @@ const ApartmentService = require('./apartmentService')
 const TasService = require('./tasService')
 const OsbbService = require('./osbbService')
 const AnnouncementService = require('./announcementService')
+const UserService = require('./userService')
 
 class ServiceFactory {
   createAuthService() {
@@ -30,8 +31,13 @@ class ServiceFactory {
   createOsbbService() {
     return new OsbbService()
   }
+
   createAnnouncementService() {
     return new AnnouncementService()
+  }
+
+  createUserService() {
+    return new UserService()
   }
 }
 

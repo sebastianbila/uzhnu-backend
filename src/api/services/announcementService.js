@@ -26,6 +26,13 @@ class AnnouncementService {
     if (!nestedComments) throw new Error('Not found')
     return nestedComments.comments
   }
+
+  async getAnnouncementDetail(id) {
+    const announcement = await Announcements.findOne({ _id: id })
+
+    if (!announcement) throw new Error('Not found')
+    return announcement
+  }
 }
 
 

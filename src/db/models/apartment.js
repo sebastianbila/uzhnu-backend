@@ -3,12 +3,11 @@ const { Schema, model } = require('mongoose')
 const schema = new Schema({
   owner: { type: String },
   accountNumber: { type: String },
-  area: { type: String },
+  area: { type: Number },
   adress: { type: String },
-  benefits: { type: String },
+  benefits: { type: Number },
   phoneNumber: { type: String },
   services: [],
-  lastIndicators: [],
   residents: [String]
 })
 

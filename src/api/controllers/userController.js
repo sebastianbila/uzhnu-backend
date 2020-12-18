@@ -1,4 +1,5 @@
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 const { User } = require('../../db/models')
 
 async function getCurrentUser(req, res, next) {
@@ -19,8 +20,8 @@ async function getUserInfo(req, res, next) {
   try {
     const { userId } = req.params
 
-    const user = await User.findOne({_id: userId})
-    if (!user) throw new Error('User not found')
+    const userService = new ServiceFactory().createUserService()
+    const user = await userService.getUserInfo(userId)
 
     res.send(user)
   } catch (err) {
@@ -28,7 +29,21 @@ async function getUserInfo(req, res, next) {
   }
 }
 
+async function resetPassword(req, res, next) {
+  try {
+    const { email } = req.body
+
+    const userService = new ServiceFactory().createUserService()
+    await userService.resetPassword(email)
+
+    res.send()
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
   getCurrentUser,
-  getUserInfo
+  getUserInfo,
+  resetPassword
 }

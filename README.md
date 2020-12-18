@@ -5,7 +5,11 @@ API_URL = https://uzhnu-backend.herokuapp.com
 ## Available routes 
 **login**: api/auth/login (POST).
 
-**currentUser**: api/user/currentUser (GET). Add Header Authorization (eg. Bearer: ...token)
+**user**
+
+    1. api/user/currentUser (GET). Add Header Authorization (eg. Bearer: ...token)
+    2. api/user/resetPassword (POST). Add email to body.
+    3. api/user/:userId (GET). Return detail user object
 
 **news**
 
@@ -17,7 +21,7 @@ API_URL = https://uzhnu-backend.herokuapp.com
 
       1. /api/poll (GET).
       2. /api/poll/userVoted/:userId (GET). Pass userId to params. Returns boolean value
-      2. /api/poll/votedResult (GET). Returns object with results
+      3. /api/poll/votedResult (GET). Returns object with results
 
 **apartment** api/apartment?name=*yourname* (GET). replace *yourname* with your user name
 
@@ -33,12 +37,8 @@ API_URL = https://uzhnu-backend.herokuapp.com
 **announcement**
 
       1. api/announcement (GET). Pagination works on this route. Query: *limit* *page*. Returrn news and pagination object
-      2. api/announcement/comments/:id (GET). *:id* - mean announcementId, to get all comments
-      2. api/announcement/comments/:id/nested/:commentId (GET). *:id* - mean announcementId, *:commentId* - mean id of comment of announcement
+      2. api/announcement/:id (GET). Get announcement object
+      3. api/announcement/comments/:id (GET). *:id* - mean announcementId, to get all comments
+      4. api/announcement/comments/:id/nested/:commentId (GET). *:id* - mean announcementId, *:commentId* - mean id of comment of announcement
 
-**get user details** /api/user/:userId (GET). Return user object
-
-
-
-  
-  
+    

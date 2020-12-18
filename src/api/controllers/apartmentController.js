@@ -15,6 +15,18 @@ async function getApartmentName(req, res, next) {
   }
 }
 
+async function changeIndicator(req, res, next) {
+  try {
+    const apartmentService = new ServiceFactory().createApartmentService()
+    const apartment = await apartmentService.changeIndicator(req.body)
+
+    ok(res, apartment)
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
-  getApartmentName
+  getApartmentName,
+  changeIndicator
 }

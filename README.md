@@ -46,6 +46,8 @@ API_URL = https://uzhnu-backend.herokuapp.com
       5. api/announcement (POST). Required body: [title, text, author, category]
       6. api/announcement/addComment (POST). Required body: [announcementId, text, author]
       7. api/announcement/addNestedComment (POST). Required body: [announcementId, commentId, text, author]
+      
+**message** api/message (POST). Required body: [email, text]
 
 
     

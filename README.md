@@ -13,7 +13,7 @@ API_URL = https://uzhnu-backend.herokuapp.com
 
 **news**
 
-    1. api/news/ (GET). Pagination works on this route. Query: *limit* *page*. Returrn news and pagination object
+    1. api/news/ (GET). Pagination works on this route. Query: *limit* *page*. Returrn news and pagination object. Use ?search=word to search news by keyword
     2. api/news/:id (GET). Return news detail. Need to provide id
 
 

@@ -3,5 +3,6 @@ module.exports = {
   pollValidator: require('./poll'),
   userValidation: require('./user'),
   announcementValidation: require('./announcement'),
-  apartmentValidation: require('./apartment')
+  apartmentValidation: require('./apartment'),
+  clientMessageValidation: require('./clientMessages'),
 }

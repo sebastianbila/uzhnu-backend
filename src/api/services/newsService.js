@@ -1,11 +1,22 @@
 const { News } = require('../../db/models')
 
 class NewsService {
-  async getAllNews() {
+  async getAllNews(search = '') {
     const news = await News.find()
 
-    if (!news) throw new Error('Not found')
-    return news
+    if (search) {
+      return news.filter((item) => {
+        if (
+          (item.title.toLowerCase().includes(search.toLowerCase())) ||
+          (item.subscription.toLowerCase().includes(search.toLowerCase()))
+        ) {
+          return item
+        }
+      })
+    } else {
+      if (!news) throw new Error('Not found')
+      return news
+    }
   }
 
   getNewsDetail(id) {

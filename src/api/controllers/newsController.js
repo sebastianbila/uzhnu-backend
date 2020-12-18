@@ -3,12 +3,12 @@ const { ok } = require('server-response')
 
 async function getAllNews(req, res, next) {
   try {
-    const { limit, page = 1 } = req.query
+    const { limit, page = 1, search } = req.query
 
     const newsService = new ServiceFactory().createNewsService()
 
     const result = {}
-    result.news = await newsService.getAllNews()
+    result.news = await newsService.getAllNews(search)
 
     const totalItems = result.news.length
     const pageSize = +limit

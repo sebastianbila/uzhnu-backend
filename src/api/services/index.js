@@ -6,6 +6,7 @@ const TasService = require('./tasService')
 const OsbbService = require('./osbbService')
 const AnnouncementService = require('./announcementService')
 const UserService = require('./userService')
+const ClientMessageService = require('./clientMessageService')
 
 class ServiceFactory {
   createAuthService() {
@@ -38,6 +39,10 @@ class ServiceFactory {
 
   createUserService() {
     return new UserService()
+  }
+
+  createClientMessagesService() {
+    return new ClientMessageService()
   }
 }
 

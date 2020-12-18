@@ -8,4 +8,5 @@ module.exports = {
   Osbb: require('./osbb'),
   Announcements: require('./announcement'),
   Document: require('./document'),
+  ClientMessage: require('./clientMessages'),
 }

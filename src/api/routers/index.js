@@ -8,4 +8,5 @@ module.exports = {
   OsbbRouter: require('./osbbRouter'),
   DocumentRouter: require('./documentRouter'),
   AnnouncementRouter: require('./announcementRouter'),
+  ClientMessagesRouter: require('./clientMessagesRouter'),
 }

@@ -8,4 +8,5 @@ module.exports = {
   OsbbController: require('./osbbController'),
   DocumentController: require('./documentController'),
   AnnouncementController: require('./announcementController'),
+  ClientMessagesController: require('./clientMessagesController'),
 }

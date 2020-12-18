@@ -10,7 +10,8 @@ const {
   TasRouter,
   OsbbRouter,
   DocumentRouter,
-  AnnouncementRouter
+  AnnouncementRouter,
+  ClientMessagesRouter
 } = require('./routers')
 const { errorHandlingMiddleware, authMiddleware } = require('./middlewares')
 const passportStrategy = require('../shared/passportStrategy')
@@ -31,6 +32,7 @@ function applyApi(app) {
   app.use('/api/document', DocumentRouter)
   app.use('/api/announcement', AnnouncementRouter)
   app.use('/api/user', UserRouter)
+  app.use('/api/message', ClientMessagesRouter)
 
   app.use(errorHandlingMiddleware)
 }

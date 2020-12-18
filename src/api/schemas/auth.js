@@ -1,5 +1,5 @@
 const { Joi } = require('express-validation')
-const { string, email, password } = require('./rules')
+const { string, password } = require('./rules')
 
 const login = {
   body: Joi.object({

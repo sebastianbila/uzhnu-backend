@@ -33,7 +33,37 @@ class AnnouncementService {
     if (!announcement) throw new Error('Not found')
     return announcement
   }
-}
 
+  async addAnnouncement(body) {
+    const announcement = await new Announcements({ ...body }).save()
+    if (!announcement) throw new Error('Cannot create announcement')
+
+    return announcement
+  }
+
+  async addComment(body) {
+    const announcement = await Announcements.findOneAndUpdate(
+      { _id: body.announcementId },
+      { $push: { comments: { ...body } } }
+    )
+
+    return !!announcement
+  }
+
+  async addNestedComment(body) {
+    const { announcementId, commentId, ...rest } = body
+
+    const announcement = await Announcements.findOne({ _id: announcementId })
+    if (!announcement) throw new Error('Announcement not found')
+
+    const nestedComments = announcement.comments
+      .find((i) => i._id.toString() === commentId.toString())
+
+    nestedComments.comments.push({ ...rest })
+    const newAnnouncement = await announcement.save()
+
+    return !!newAnnouncement
+  }
+}
 
 module.exports = AnnouncementService

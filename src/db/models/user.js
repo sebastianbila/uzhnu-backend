@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose')
 const schema = new Schema({
   pib: {
     type: String,
-    require: true
+    required: true
   },
   email: {
     required: true,

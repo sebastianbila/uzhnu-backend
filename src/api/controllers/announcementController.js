@@ -1,4 +1,5 @@
 const ServiceFactory = require('../services')
+const { serverError } = require('server-response')
 const { ok } = require('server-response')
 
 async function getAllAnnouncement(req, res, next) {
@@ -70,9 +71,53 @@ async function getAnnouncementDetail(req, res, next) {
   }
 }
 
+async function addAnnouncement(req, res, next) {
+  try {
+    const announcementService = new ServiceFactory().createAnnouncementService()
+    const announcement = await announcementService.addAnnouncement(req.body)
+
+    ok(res, announcement)
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function addComment(req, res, next) {
+  try {
+    const announcementService = new ServiceFactory().createAnnouncementService()
+    const announcement = await announcementService.addComment(req.body)
+
+    if (announcement) {
+      res.send()
+    } else {
+      serverError(res, 'Cannot add comment')
+    }
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function addNestedComment(req, res, next) {
+  try {
+    const announcementService = new ServiceFactory().createAnnouncementService()
+    const announcement = await announcementService.addNestedComment(req.body)
+
+    if (announcement) {
+      res.send()
+    } else {
+      serverError(res, 'Cannot add nested comment')
+    }
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
   getAllAnnouncement,
   getAnnouncementComments,
   getAnnouncementNestedComments,
-  getAnnouncementDetail
+  getAnnouncementDetail,
+  addAnnouncement,
+  addComment,
+  addNestedComment
 }

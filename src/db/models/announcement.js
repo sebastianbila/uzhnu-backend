@@ -1,11 +1,11 @@
 const { Schema, model, Types } = require('mongoose')
 
 const schema = new Schema({
-  title: { type: String, require: true },
+  title: { type: String, required: true },
   date: { type: Date, default: Date.now },
-  text: { type: String, require: true },
+  text: { type: String, required: true },
   author: { type: Types.ObjectId, ref: 'residents' },
-  category: { type: String, require: true },
+  category: { type: String, required: true },
 
   comments: [
     {

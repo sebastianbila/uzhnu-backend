@@ -44,8 +44,8 @@ API_URL = https://uzhnu-backend.herokuapp.com
       3. api/announcement/comments/:id (GET). *:id* - mean announcementId, to get all comments
       4. api/announcement/comments/:id/nested/:commentId (GET). *:id* - mean announcementId, *:commentId* - mean id of comment of announcement
       5. api/announcement (POST). Required body: [title, text, author, category]
-      6. api/announcement/addComment (POST). Required body: [announcementId, text, author]
-      7. api/announcement/addNestedComment (POST). Required body: [announcementId, commentId, text, author]
+      6. api/announcement/addComment (POST). Required body: [announcementId, text, authorId]
+      7. api/announcement/addNestedComment (POST). Required body: [announcementId, commentId, text, authorId]
       
 **message** api/message (POST). Required body: [email, text]
 

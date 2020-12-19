@@ -1,6 +1,6 @@
-const ServiceFactory = require('../services')
 const { serverError } = require('server-response')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function getAllAnnouncement(req, res, next) {
   try {
@@ -18,12 +18,13 @@ async function getAllAnnouncement(req, res, next) {
     result.pagination = {
       totalItems,
       totalPages: Math.ceil(totalItems / pageSize),
-      currentPage
+      currentPage,
     }
 
     if (limit && !pageSize !== 0) {
       result.announcement = result.announcement
-        .slice((currentPage - 1) * pageSize).slice(0, pageSize)
+        .slice((currentPage - 1) * pageSize)
+        .slice(0, pageSize)
     }
 
     ok(res, result)
@@ -50,7 +51,10 @@ async function getAnnouncementNestedComments(req, res, next) {
     const { id, commentId } = req.params
 
     const announcementService = new ServiceFactory().createAnnouncementService()
-    const nestedComments = await announcementService.getAnnouncementNestedComments(id, commentId)
+    const nestedComments = await announcementService.getAnnouncementNestedComments(
+      id,
+      commentId,
+    )
 
     ok(res, nestedComments)
   } catch (err) {
@@ -119,5 +123,5 @@ module.exports = {
   getAnnouncementDetail,
   addAnnouncement,
   addComment,
-  addNestedComment
+  addNestedComment,
 }

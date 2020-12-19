@@ -1,8 +1,15 @@
+const authValidator = require('./auth')
+const pollValidator = require('./poll')
+const userValidation = require('./user')
+const announcementValidation = require('./announcement')
+const apartmentValidation = require('./apartment')
+const clientMessageValidation = require('./clientMessages')
+
 module.exports = {
-  authValidator: require('./auth'),
-  pollValidator: require('./poll'),
-  userValidation: require('./user'),
-  announcementValidation: require('./announcement'),
-  apartmentValidation: require('./apartment'),
-  clientMessageValidation: require('./clientMessages'),
+  authValidator,
+  pollValidator,
+  userValidation,
+  announcementValidation,
+  apartmentValidation,
+  clientMessageValidation,
 }

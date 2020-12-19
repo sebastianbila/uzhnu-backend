@@ -6,16 +6,16 @@ const addAnnouncement = {
     title: string.required(),
     text: string.required(),
     author: string.required(),
-    category: string.required()
-  })
+    category: string.required(),
+  }),
 }
 
 const addComment = {
   body: Joi.object({
     announcementId: string.required(),
     text: string.required(),
-    author: string.required()
-  })
+    author: string.required(),
+  }),
 }
 
 const addNestedComment = {
@@ -23,12 +23,12 @@ const addNestedComment = {
     announcementId: string.required(),
     commentId: string.required(),
     text: string.required(),
-    author: string.required()
-  })
+    author: string.required(),
+  }),
 }
 
 module.exports = {
   addAnnouncement,
   addComment,
-  addNestedComment
+  addNestedComment,
 }

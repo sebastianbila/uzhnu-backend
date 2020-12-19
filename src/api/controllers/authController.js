@@ -1,5 +1,5 @@
-const ServiceFactory = require('../services')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function login(req, res, next) {
   try {
@@ -15,5 +15,5 @@ async function login(req, res, next) {
 }
 
 module.exports = {
-  login
+  login,
 }

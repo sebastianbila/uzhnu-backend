@@ -1,5 +1,9 @@
+const errorHandlingMiddleware = require('./errorHandlingMiddleware')
+const authMiddleware = require('./authMiddleware')
+const passportMiddleware = require('./passportMiddleware')
+
 module.exports = {
-  errorHandlingMiddleware: require('./errorHandlingMiddleware'),
-  authMiddleware: require('./authMiddleware'),
-  passportMiddleware: require('./passportMiddleware')
+  errorHandlingMiddleware,
+  authMiddleware,
+  passportMiddleware,
 }

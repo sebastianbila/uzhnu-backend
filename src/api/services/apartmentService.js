@@ -5,8 +5,8 @@ class ApartmentService {
     const apartment = await Apartment.find()
 
     let specificApartment
-    apartment.map((apart) => {
-      if (apart.residents.some((i) => i === name)) {
+    apartment.forEach(apart => {
+      if (apart.residents.some(i => i === name)) {
         specificApartment = apart
       }
     })
@@ -19,12 +19,12 @@ class ApartmentService {
     const apartment = await this.getApartmentName(body.name)
 
     const servicesClone = []
-    apartment.services.forEach((item) => {
+    apartment.services.forEach(item => {
       if (item.name === body.nameService) {
         servicesClone.push({
           ...item,
           lastValue: +item.currentValue,
-          currentValue: +body.currentValue
+          currentValue: +body.currentValue,
         })
       } else {
         servicesClone.push(item)

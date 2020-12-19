@@ -3,23 +3,23 @@ const { Schema, model } = require('mongoose')
 const schema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   subscription: {
-    type: String
+    type: String,
   },
   imgPath: [String],
   category: {
-    type: String
+    type: String,
   },
   important: {
     type: Boolean,
-    default: false
+    default: false,
   },
   date: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 })
 
 module.exports = model('news', schema)

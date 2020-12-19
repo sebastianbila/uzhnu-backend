@@ -5,8 +5,8 @@ const changeIndicator = {
   body: Joi.object({
     name: string.required(),
     nameService: string.required(),
-    currentValue: number.required()
-  })
+    currentValue: number.required(),
+  }),
 }
 
 module.exports = {

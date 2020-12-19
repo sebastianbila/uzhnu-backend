@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema({
   titul: { type: String },
-  filePath: []
+  filePath: [],
 })
 
 module.exports = model('documents', schema)

@@ -1,12 +1,25 @@
+const AuthController = require('./authController')
+const UserController = require('./userController')
+const NewsController = require('./newsController')
+const PollController = require('./pollController')
+const ApartmentController = require('./apartmentController')
+const TasController = require('./tasController')
+const OsbbController = require('./osbbController')
+const DocumentController = require('./documentController')
+const AnnouncementController = require('./announcementController')
+const ClientMessagesController = require('./clientMessagesController')
+const ContactController = require('./contactController')
+
 module.exports = {
-  AuthController: require('./authController'),
-  UserController: require('./userController'),
-  NewsController: require('./newsController'),
-  PollController: require('./pollController'),
-  ApartmentController: require('./apartmentController'),
-  TasController: require('./tasController'),
-  OsbbController: require('./osbbController'),
-  DocumentController: require('./documentController'),
-  AnnouncementController: require('./announcementController'),
-  ClientMessagesController: require('./clientMessagesController'),
+  AuthController,
+  UserController,
+  NewsController,
+  PollController,
+  ApartmentController,
+  TasController,
+  OsbbController,
+  DocumentController,
+  AnnouncementController,
+  ClientMessagesController,
+  ContactController,
 }

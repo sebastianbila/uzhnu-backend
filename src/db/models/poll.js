@@ -1,20 +1,18 @@
-const { Schema, model, Types } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const schema = new Schema({
   name: {
-    type: String
+    type: String,
   },
   subject: {
-    type: String
+    type: String,
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   votingOptions: [String],
-  votes: []
+  votes: [],
 })
 
 module.exports = model('polls', schema)
-
-

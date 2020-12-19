@@ -1,5 +1,5 @@
-const ServiceFactory = require('../services')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function getPolls(req, res, next) {
   try {
@@ -14,12 +14,12 @@ async function getPolls(req, res, next) {
 
 async function isUserVoted(req, res, next) {
   try {
-    const {userId} = req.params
+    const { userId } = req.params
 
     const pollService = new ServiceFactory().createPollService()
     const isVoted = await pollService.isUserVoted(userId)
 
-    ok(res, {isVoted})
+    ok(res, { isVoted })
   } catch (err) {
     next(err)
   }

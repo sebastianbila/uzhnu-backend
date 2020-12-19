@@ -2,18 +2,17 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema({
   name: {
-    type: String
+    type: String,
   },
   costFixed: {
-    type: Number
+    type: Number,
   },
   costDynamic: {
-    type: Number
+    type: Number,
   },
   imgPath: {
-    type: String
-  }
+    type: String,
+  },
 })
 
 module.exports = model('tas', schema)
-

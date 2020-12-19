@@ -8,7 +8,7 @@ const schema = new Schema({
   benefits: { type: Number },
   phoneNumber: { type: String },
   services: [],
-  residents: [String]
+  residents: [String],
 })
 
 module.exports = model('apartments', schema)

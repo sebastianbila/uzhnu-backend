@@ -8,9 +8,11 @@ class AuthService {
     if (!user) throw new Error('User not found')
 
     const isMatch = await bcrypt.compareSync(password, user.password)
-    if (!isMatch) throw new Error('Cannot login. Phone or password doesn\'t match')
+    if (!isMatch)
+      throw new Error("Cannot login. Phone or password doesn't match")
 
-    return {token: generateToken(user), userId: user._id}
+    // eslint-disable-next-line no-underscore-dangle
+    return { token: generateToken(user), userId: user._id }
   }
 }
 

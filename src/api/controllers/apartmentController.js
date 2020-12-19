@@ -1,5 +1,5 @@
-const ServiceFactory = require('../services')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function getApartmentName(req, res, next) {
   try {
@@ -28,5 +28,5 @@ async function changeIndicator(req, res, next) {
 
 module.exports = {
   getApartmentName,
-  changeIndicator
+  changeIndicator,
 }

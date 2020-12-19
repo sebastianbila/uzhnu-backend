@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const nodemailer = require('nodemailer')
 const bcrypt = require('bcryptjs')
 const { User } = require('../../db/models')
@@ -19,15 +20,15 @@ class UserService {
       service: 'gmail',
       auth: {
         user: 'osbb.uzhnu@gmail.com',
-        pass: 'osbb12345'
-      }
+        pass: 'osbb12345',
+      },
     })
 
     const newPassword = generatePassword()
     await User.findOneAndUpdate(
       { _id: user._id },
       { $set: { password: bcrypt.hashSync(newPassword, 10) } },
-      { new: true }
+      { new: true },
     )
 
     const mailOptions = {
@@ -40,15 +41,14 @@ class UserService {
           <li>Номер телефону: <b>${user.phoneNumber}</b></li>
           <li>Пароль: <b>${newPassword}</b></li>
         </ul>
-      `
+      `,
     }
 
-    await transporter.sendMail(mailOptions, function(error, info) {
+    await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.log(error)
-      } else {
-        console.log('Email sent: ' + info.response)
+        return error
       }
+      return info
     })
   }
 }

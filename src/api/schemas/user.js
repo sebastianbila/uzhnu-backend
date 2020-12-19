@@ -3,8 +3,8 @@ const { email } = require('./rules')
 
 const isEmail = {
   body: Joi.object({
-    email: email.required()
-  })
+    email: email.required(),
+  }),
 }
 
 module.exports = { isEmail }

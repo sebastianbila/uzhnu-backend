@@ -1,10 +1,9 @@
 const { ok } = require('server-response')
 const ServiceFactory = require('../services')
-const { User } = require('../../db/models')
 
 async function getCurrentUser(req, res, next) {
   try {
-    const user = req.user
+    const { user } = req
 
     if (user) {
       ok(res, user)
@@ -45,5 +44,5 @@ async function resetPassword(req, res, next) {
 module.exports = {
   getCurrentUser,
   getUserInfo,
-  resetPassword
+  resetPassword,
 }

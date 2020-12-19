@@ -12,5 +12,5 @@ async function addMessage(req, res, next) {
 }
 
 module.exports = {
-  addMessage
+  addMessage,
 }

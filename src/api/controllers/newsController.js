@@ -1,5 +1,5 @@
-const ServiceFactory = require('../services')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function getAllNews(req, res, next) {
   try {
@@ -17,11 +17,13 @@ async function getAllNews(req, res, next) {
     result.pagination = {
       totalItems,
       totalPages: Math.ceil(totalItems / pageSize),
-      currentPage
+      currentPage,
     }
 
     if (limit && !pageSize !== 0) {
-      result.news = result.news.slice((currentPage - 1) * pageSize).slice(0, pageSize)
+      result.news = result.news
+        .slice((currentPage - 1) * pageSize)
+        .slice(0, pageSize)
     }
 
     ok(res, result)
@@ -44,5 +46,5 @@ async function getNewsDetail(req, res, next) {
 
 module.exports = {
   getAllNews,
-  getNewsDetail
+  getNewsDetail,
 }

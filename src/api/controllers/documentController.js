@@ -1,12 +1,11 @@
-const { Document } = require('../../db/models')
 const { ok } = require('server-response')
+const { Document } = require('../../db/models')
 
 async function getAllDocuments(req, res, next) {
   try {
     const documents = await Document.find()
 
     if (!documents) throw new Error('Not found')
-    console.log(documents)
 
     ok(res, documents)
   } catch (err) {
@@ -15,5 +14,5 @@ async function getAllDocuments(req, res, next) {
 }
 
 module.exports = {
-  getAllDocuments
+  getAllDocuments,
 }

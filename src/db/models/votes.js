@@ -4,11 +4,11 @@ const schema = new Schema({
   user: { type: Types.ObjectId, ref: 'residents' },
   voted: {
     type: Boolean,
-    default: false
+    default: false,
   },
   vote: {
-    type: String
-  }
+    type: String,
+  },
 })
 
 module.exports = model('votes', schema)

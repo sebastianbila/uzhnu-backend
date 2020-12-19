@@ -4,8 +4,8 @@ const { string, password } = require('./rules')
 const login = {
   body: Joi.object({
     phone: string.required(),
-    password: password.required()
-  })
+    password: password.required(),
+  }),
 }
 
 module.exports = {

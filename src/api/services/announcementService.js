@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const { Announcements } = require('../../db/models')
 
 class AnnouncementService {
@@ -20,8 +21,9 @@ class AnnouncementService {
 
     if (!announcement) throw new Error('Not found')
 
-    const nestedComments = announcement.comments
-      .find((i) => i._id.toString() === commentId.toString())
+    const nestedComments = announcement.comments.find(
+      i => i._id.toString() === commentId.toString(),
+    )
 
     if (!nestedComments) throw new Error('Not found')
     return nestedComments.comments
@@ -44,7 +46,7 @@ class AnnouncementService {
   async addComment(body) {
     const announcement = await Announcements.findOneAndUpdate(
       { _id: body.announcementId },
-      { $push: { comments: { ...body } } }
+      { $push: { comments: { ...body } } },
     )
 
     return !!announcement
@@ -56,8 +58,9 @@ class AnnouncementService {
     const announcement = await Announcements.findOne({ _id: announcementId })
     if (!announcement) throw new Error('Announcement not found')
 
-    const nestedComments = announcement.comments
-      .find((i) => i._id.toString() === commentId.toString())
+    const nestedComments = announcement.comments.find(
+      i => i._id.toString() === commentId.toString(),
+    )
 
     nestedComments.comments.push({ ...rest })
     const newAnnouncement = await announcement.save()

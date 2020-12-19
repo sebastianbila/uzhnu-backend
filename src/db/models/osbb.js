@@ -8,8 +8,7 @@ const schema = new Schema({
   mfo: { type: String },
   accountnumber: { type: String },
   iban: { type: String },
-  apartments: { type: Number }
+  apartments: { type: Number },
 })
 
 module.exports = model('osbbs', schema)
-

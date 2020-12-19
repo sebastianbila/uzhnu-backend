@@ -3,8 +3,8 @@ const { number } = require('./rules')
 
 const isVoted = {
   body: Joi.object({
-    userId: number.required()
-  })
+    userId: number.required(),
+  }),
 }
 
 module.exports = { isVoted }

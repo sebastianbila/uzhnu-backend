@@ -1,5 +1,5 @@
-const ServiceFactory = require('../services')
 const { ok } = require('server-response')
+const ServiceFactory = require('../services')
 
 async function getTasDetail(req, res, next) {
   try {
@@ -20,5 +20,5 @@ async function getTasDetail(req, res, next) {
 }
 
 module.exports = {
-  getTasDetail
+  getTasDetail,
 }

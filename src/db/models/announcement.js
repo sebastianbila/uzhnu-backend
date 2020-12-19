@@ -16,11 +16,11 @@ const schema = new Schema({
         {
           author: { type: Types.ObjectId, ref: 'residents' },
           text: { type: String },
-          date: { type: Date, default: Date.now }
-        }
-      ]
-    }
-  ]
+          date: { type: Date, default: Date.now },
+        },
+      ],
+    },
+  ],
 })
 
 module.exports = model('announcements', schema)

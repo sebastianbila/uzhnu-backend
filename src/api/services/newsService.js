@@ -5,24 +5,23 @@ class NewsService {
     const news = await News.find()
 
     if (search) {
-      return news.filter((item) => {
+      return news.filter(item => {
         if (
-          (item.title.toLowerCase().includes(search.toLowerCase())) ||
-          (item.subscription.toLowerCase().includes(search.toLowerCase()))
+          item.title.toLowerCase().includes(search.toLowerCase()) ||
+          item.subscription.toLowerCase().includes(search.toLowerCase())
         ) {
           return item
         }
+        return false
       })
-    } else {
-      if (!news) throw new Error('Not found')
-      return news
     }
+    if (!news) throw new Error('Not found')
+    return news
   }
 
   getNewsDetail(id) {
     return News.findOne({ _id: id })
   }
 }
-
 
 module.exports = NewsService

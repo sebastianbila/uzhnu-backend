@@ -49,5 +49,7 @@ API_URL = https://uzhnu-backend.herokuapp.com
       
 **message** api/message (POST). Required body: [email, text]
 
+**contact** api/contact (GET). Get all contacts
+
 
     
